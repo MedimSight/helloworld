@@ -1,0 +1,2 @@
+[en] This is a small summary about the app that will appear with the icon. You can use language tags to help your worldwide users.
+[es] Escribe aqui un resumen de tu app. Puedes usar etiquetas de idioma para llegar a todos tus usuarios a nivel global.

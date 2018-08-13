@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<task>
+    <contributor>Medimsight Team</contributor>
+    <inout>
+            <!--
+                This fields define the user interface that will be used to select the data that your 
+                algorithm will receive as input and the outputs that will generate.
+            -->
+           <in type="volume_group" value="" class="all">
+                <name>My Image</name>
+				<id>imageone</id>
+           </in>
+           <!--
+                The <in> tag is for inputs. In the type field specify what kind of interface will 
+                be used. Example: integer, string, group, etc. In this one, volume_group means
+                that the user will be able to select an image from a patient from a group or just
+                a group and automatically the app will run over all the patients that have the desired
+                image.
+                The class field tells us the image that fits better your app, in this example should 
+                be a MRI, T1 weighted and that contains a BRAIN.
+                The <name> is what the user will see for this field.
+                The <id> tag is really important, this value will be used in the python script to
+                get the input data using the gsutil library.
+            -->
+            <out type="string" value="stdfile" class="txt">
+              <name>Report name</name>
+              <id>txtreport</id>
+              <default>Something nice</default>
+           </out>
+           <out type="string" value="stdfile" class="csv">
+              <name>CSV name</name>
+              <id>csvreport</id>
+              <default>Something nicer</default>
+           </out>
+            <!--
+                The <out> tag is for outputs. In the type field specify what kind of interface will 
+                be used. Example: integer, string, group, etc. In this example is a string that 
+                will be used to name an image. To know that, we use value=volume.
+                The class field tells us the image, if is an image, that your app will return, in this 
+                example should be a CT of the BRAIN (looks crazy isn´t it? don´t limit your imagination).
+                The <name> is what the user will see for this field.
+                The <default> will appear in preset.
+                The <id> tag is really important, this value will be used in the python script to
+                set the data using the gsutil library.
+            -->
+    </inout>
+</task>
